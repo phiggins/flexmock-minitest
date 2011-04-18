@@ -1,6 +1,8 @@
 require 'minitest/unit'
 require 'flexmock/base'
 
+VERSION = "1.0.0"
+
 class FlexMock
   @framework_adapter = Module.new do
     extend MiniTest::Assertions
@@ -10,20 +12,17 @@ class FlexMock
     end
     extend self
   end
-
-  module Minitest
-    VERSION = "1.0.0"
-
-    include FlexMock::MockContainer
-
-    def teardown
-      super
-      flexmock_teardown
-    end
-  end
 end
 
-MiniTest::Unit::TestCase.send(:include, FlexMock::Minitest)
+MiniTest::Unit::TestCase.class_eval do
+  include FlexMock::MockContainer
+
+  alias flexmock_minitest_teardown teardown
+  def teardown
+    flexmock_teardown
+    flexmock_minitest_teardown
+  end
+end
 
 MiniTest::Spec.class_eval do
   after do
