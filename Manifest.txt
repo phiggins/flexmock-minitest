@@ -1,0 +1,6 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+lib/flexmock/minitest.rb
+test/test_flexmock_minitest.rb
