@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Some lame monkeypatches to make a small subset of FlexMock functionaliry work
+Some lame monkeypatches to make a small subset of FlexMock functionality work
 with MiniTest::Unit and MiniTest::Spec.
 
 == FEATURES/PROBLEMS:
