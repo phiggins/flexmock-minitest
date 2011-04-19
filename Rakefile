@@ -6,7 +6,7 @@ require 'hoe/git'
 
 Hoe.plugin(:git)
 
-Hoe.spec 'flexmock_minitest' do
+Hoe.spec 'flexmock-minitest' do
   developer('pete higgins', 'pete@peterhiggins.org')
 
   extra_dev_deps << ["hoe-git", "~> 1.3.0"]
