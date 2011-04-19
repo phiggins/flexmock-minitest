@@ -1,7 +1,7 @@
 require 'minitest/unit'
 require 'flexmock/base'
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 class FlexMock
   @framework_adapter = Module.new do
